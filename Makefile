@@ -16,9 +16,12 @@ stop-container:
 rm-image:
 	docker rmi boh:test
 
+rm-target:
+	rm -r ./target
+
 
 run: build-war build-docker run-docker
 
-clean: stop-container rm-image
+clean: stop-container rm-image rm-target
 
 .PHONY: build-docker run-docker build-war stop-container remove-image all clean
