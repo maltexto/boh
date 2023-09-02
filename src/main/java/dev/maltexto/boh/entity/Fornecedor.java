@@ -20,7 +20,7 @@ public class Fornecedor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String cpnj;
+    private String cnpj;
 
     private String nome;
 

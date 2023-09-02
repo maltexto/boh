@@ -63,13 +63,12 @@ public class FornecedorDAO {
             Fornecedor fornecedorExistente = findById(fornecedor.getId());
 
             fornecedorExistente.setNome(fornecedor.getNome());
-            fornecedorExistente.setCpnj(fornecedor.getCpnj());
+            fornecedorExistente.setCnpj(fornecedor.getCnpj());
             fornecedorExistente.setEmail(fornecedor.getEmail());
             fornecedorExistente.setComentario(fornecedor.getComentario());
-
+            Fornecedor fornecedorAtualizado = entityManager.merge(fornecedorExistente);
             entityManager.getTransaction().commit();
+            return fornecedorAtualizado;
         }
-
-        return fornecedor;
     }
 }

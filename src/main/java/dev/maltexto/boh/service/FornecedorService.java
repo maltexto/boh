@@ -29,7 +29,7 @@ public class FornecedorService {
     }
 
     public Fornecedor save(Fornecedor fornecedor) {
-        Fornecedor fornecedorComMesmoCnpj = fornecedorDAO.findOneByCnpj(fornecedor.getCpnj());
+        Fornecedor fornecedorComMesmoCnpj = fornecedorDAO.findOneByCnpj(fornecedor.getCnpj());
         if (fornecedorComMesmoCnpj != null) {
             throw new GenericApiException(
                     "Já existe um fornecedor com este CNPJ",
