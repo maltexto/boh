@@ -1,0 +1,1 @@
+INSERT INTO fornecedor (cnpj, nome, email, comentario) VALUES ('11111111111111', 'Fornecedor A', 'fornecedorA@example.com', 'Comentário para Fornecedor A');
