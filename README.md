@@ -8,7 +8,7 @@
 
 #### O que?
 > CRUD da classe Fornecedor com hibernate e H2  
-> e uma **API**zinha com `jakartaee-web-api`
+> e uma **API**zinha com `jakartaee-core-api`
 
   
 
@@ -17,29 +17,29 @@
 
     Método: GET
     Método Java: findAll()
-    URL: http://localhost:8080/boh/fornecedores
+    URL: http://localhost:8080/boh/server/fornecedores
 
 #### Obter um Fornecedor por ID:
 
     Método: GET
     Método Java: findOneById(@PathParam("id") Long id)
-    URL: http://localhost:8080/boh/fornecedores/{id}
+    URL: http://localhost:8080/boh/server/fornecedores/{id}
 
 #### Criar um Fornecedor:
 
     Método: POST
     Método Java: create(Fornecedor fornecedor)
-    URL: http://localhost:8080/boh/fornecedores
+    URL: http://localhost:8080/boh/server/fornecedores
 
 #### Atualizar um Fornecedor:
 
     Método: PUT
     Método Java: update(@PathParam("id") Long id, Fornecedor fornecedor)
-    URL: http://localhost:8080/boh/fornecedores/{id}
+    URL: http://localhost:8080/boh/server/fornecedores/{id}
 
 #### Excluir um Fornecedor:
 
     Método: DELETE
     Método Java: delete(@PathParam("id") Long id)
-    URL: http://localhost:8080/boh/fornecedores/{id}
+    URL: http://localhost:8080/boh/server/fornecedores/{id}
 
