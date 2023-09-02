@@ -14,35 +14,28 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
-@Path("/fornecedores")
+@Path("fornecedores")
 public class FornecedoresController {
 
     @Inject
     private FornecedorService fornecedorService;
 
     @GET
-    @Path("/ping")
-    @Produces(MediaType.TEXT_PLAIN)
-    public Response ping() {
-        return Response.ok("Pong").build();
-    }
-
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces({ MediaType.APPLICATION_JSON })
     public Response findAll() {
         return Response.ok(fornecedorService.findAll()).build();
     }
 
     @GET
-    @Path("/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Path("{id}")
+    @Produces({ MediaType.APPLICATION_JSON })
     public Response findOneById(@PathParam("id") Long id) {
         return Response.ok(fornecedorService.findById(id)).build();
     }
 
     @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes({ MediaType.APPLICATION_JSON })
+    @Produces({ MediaType.APPLICATION_JSON })
     public Response create(Fornecedor fornecedor) {
         return Response
                 .status(Response.Status.CREATED)
@@ -51,15 +44,17 @@ public class FornecedoresController {
     }
 
     @PUT
-    @Path("/{id}")
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
+    @Path("{id}")
+    @Consumes({ MediaType.APPLICATION_JSON })
+    @Produces({ MediaType.APPLICATION_JSON })
     public Response update(@PathParam("id") Long id, Fornecedor fornecedor) {
         return Response.ok(fornecedorService.update(id, fornecedor)).build();
     }
 
     @DELETE
-    @Path("/{id}")
+    @Path("{id}")
+    @Consumes({ MediaType.APPLICATION_JSON })
+    @Produces({ MediaType.APPLICATION_JSON })
     public Response delete(@PathParam("id") Long id) {
         return Response.ok(fornecedorService.delete(id)).build();
     }
